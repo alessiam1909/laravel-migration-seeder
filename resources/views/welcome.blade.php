@@ -17,16 +17,23 @@
 
 <body>
 
-    <main>
-        @foreach ($trains as $train )
-        <div class="card text-bg-success mb-3" style="max-width: 18rem;">
-            <div class="card-header">Codice treno: {{$train['codice_treno']}}</div>
-            <div class="card-body">
-              <p class="card-text">Success card title</p>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <main >
+        <h1 class="text-center m-4">BOOLITALIA</h1>
+        <div class="d-flex flex-wrap">
+            @foreach ($trains as $train )
+            <div class="card text-bg-success m-3 p-3" style="max-width: 18rem;">
+                <div class="card-header">ID treno: {{$train['id']}}</div>
+                <div class="card-body">
+                  <p class="card-text">Partenza da: {{$train['stazione_di_partenza']}} alle ore: {{$train['orario_di_partenza']}}</p>
+                  <p class="card-text">Arrivo a: {{$train['stazione_di_arrivo']}} alle ore: {{$train['orario_di_arrivo']}}</p>
+                  <p class="card-text">Compagnia ferroviaria: {{$train['azienda']}}</p>
+                  <p class="card-text">Codice treno: {{$train['codice_treno']}}</p>
+                  <p class="card-text">Numero carrozze: {{$train['numero_carrozze']}}</p>
+                  
+                </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
           
     </main>
 
